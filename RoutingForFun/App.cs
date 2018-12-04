@@ -18,7 +18,7 @@ namespace RoutingForFun
             throw new ArgumentException("path", "No route exists for the given path");
         }
 
-        public void AddRoute(string home, IStringView stringView)
+        private void AddRoute(string home, IStringView stringView)
         {
             _routes.Add(home, stringView);
         }
