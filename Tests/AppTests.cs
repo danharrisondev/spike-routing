@@ -12,9 +12,7 @@ namespace Tests
         public void Set_up_routes()
         {
             _app = new App();
-            _app.AddRoute("home", new HomeView());
-            _app.AddRoute("about", new AboutView());
-            _app.AddRoute("contact", new ContactView());
+            _app.RegisterRoutesFromAssemblyContaining<HomeView>();
         }
 
         [Test]
@@ -36,16 +34,6 @@ namespace Tests
         {
             var result = _app.Handle("contact");
             Assert.That(result, Is.EqualTo("Content for contact page"));
-        }
-
-        [Test]
-        public void Routes_can_be_registered_through_attributes()
-        {
-            var app = new App();
-            app.RegisterRoutesFromAssemblyContaining<HomeView>();
-            Assert.That(app.Handle("home"), Is.EqualTo("Content for home page"));
-            Assert.That(app.Handle("about"), Is.EqualTo("Content for about page"));
-            Assert.That(app.Handle("contact"), Is.EqualTo("Content for contact page"));
         }
 
         [Test]
