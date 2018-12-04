@@ -15,6 +15,14 @@ namespace Tests
         }
 
         [Test]
+        public void About_returns_about_page_content()
+        {
+            var app = new App();
+            var result = app.Handle("about");
+            Assert.That(result, Is.EqualTo("Content for about page"));
+        }
+
+        [Test]
         public void Unmatched_path_throws_argument_exception()
         {
             var app = new App();
