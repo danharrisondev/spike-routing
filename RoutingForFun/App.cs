@@ -38,14 +38,4 @@ namespace RoutingForFun
             _routes.Add(home, stringView);
         }
     }
-
-    public class RouteAttribute : Attribute
-    {
-        public string Path { get; }
-
-        public RouteAttribute(string path)
-        {
-            Path = path;
-        }
-    }
 }
