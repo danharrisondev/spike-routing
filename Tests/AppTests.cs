@@ -39,12 +39,23 @@ namespace Tests
         }
 
         [Test]
+        public void Routes_can_be_registered_through_attributes()
+        {
+            var app = new App();
+            app.RegisterRoutesFromAssemblyContaining<HomeView>();
+            Assert.That(app.Handle("home"), Is.EqualTo("Content for home page"));
+            Assert.That(app.Handle("about"), Is.EqualTo("Content for about page"));
+            Assert.That(app.Handle("contact"), Is.EqualTo("Content for contact page"));
+        }
+
+        [Test]
         public void Unmatched_path_throws_argument_exception()
         {
             Assert.Throws<ArgumentException>(() => _app.Handle("Unmatched path"));
         }
     }
 
+    [Route("home")]
     public class HomeView : IStringView
     {
         public string GetContent()
@@ -53,6 +64,7 @@ namespace Tests
         }
     }
 
+    [Route("about")]
     public class AboutView : IStringView
     {
         public string GetContent()
@@ -61,6 +73,7 @@ namespace Tests
         }
     }
 
+    [Route("contact")]
     public class ContactView : IStringView
     {
         public string GetContent()

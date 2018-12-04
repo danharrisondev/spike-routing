@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace RoutingForFun
 {
@@ -19,6 +21,31 @@ namespace RoutingForFun
         public void AddRoute(string home, IStringView stringView)
         {
             _routes.Add(home, stringView);
+        }
+
+        public void RegisterRoutesFromAssemblyContaining<T>()
+        {
+            var assemblyTypes = typeof(T).Assembly.GetTypes();
+
+            foreach (var type in assemblyTypes)
+            {
+                var routeAttribute = type.GetCustomAttribute<RouteAttribute>();
+
+                if (routeAttribute != null)
+                {
+                    AddRoute(routeAttribute.Path, (IStringView)Activator.CreateInstance(type));
+                }
+            }
+        }
+    }
+
+    public class RouteAttribute : Attribute
+    {
+        public string Path { get; }
+
+        public RouteAttribute(string path)
+        {
+            Path = path;
         }
     }
 }
