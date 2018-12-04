@@ -10,6 +10,7 @@ namespace Tests
         public void Home_returns_home_page_content()
         {
             var app = new App();
+            app.AddRoute("home", "Content for home page");
             var result = app.Handle("home");
             Assert.That(result, Is.EqualTo("Content for home page"));
         }
@@ -18,6 +19,7 @@ namespace Tests
         public void About_returns_about_page_content()
         {
             var app = new App();
+            app.AddRoute("about", "Content for about page");
             var result = app.Handle("about");
             Assert.That(result, Is.EqualTo("Content for about page"));
         }
@@ -26,6 +28,7 @@ namespace Tests
         public void Contact_returns_contact_page_content()
         {
             var app = new App();
+            app.AddRoute("contact", "Content for contact page");
             var result = app.Handle("contact");
             Assert.That(result, Is.EqualTo("Content for contact page"));
         }
