@@ -18,11 +18,6 @@ namespace RoutingForFun
             throw new ArgumentException("path", "No route exists for the given path");
         }
 
-        private void AddRoute(string home, IStringView stringView)
-        {
-            _routes.Add(home, stringView);
-        }
-
         public void RegisterRoutesFromAssemblyContaining<T>()
         {
             var assemblyTypes = typeof(T).Assembly.GetTypes();
@@ -36,6 +31,11 @@ namespace RoutingForFun
                     AddRoute(routeAttribute.Path, (IStringView)Activator.CreateInstance(type));
                 }
             }
+        }
+
+        private void AddRoute(string home, IStringView stringView)
+        {
+            _routes.Add(home, stringView);
         }
     }
 
