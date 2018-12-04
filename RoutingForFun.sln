@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingForFun", "RoutingForFun\RoutingForFun.csproj", "{EECC5B16-F51C-46B8-954A-A18436F74041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{BA4CB995-85B2-4F9F-977A-643E60A65B2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EECC5B16-F51C-46B8-954A-A18436F74041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECC5B16-F51C-46B8-954A-A18436F74041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECC5B16-F51C-46B8-954A-A18436F74041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECC5B16-F51C-46B8-954A-A18436F74041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4CB995-85B2-4F9F-977A-643E60A65B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4CB995-85B2-4F9F-977A-643E60A65B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4CB995-85B2-4F9F-977A-643E60A65B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4CB995-85B2-4F9F-977A-643E60A65B2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ED94B36-BA78-4168-9BDF-49C4051E618E}
+	EndGlobalSection
+EndGlobal
