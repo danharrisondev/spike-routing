@@ -12,9 +12,9 @@ namespace Tests
         public void Set_up_routes()
         {
             _app = new App();
-            _app.AddRoute("home", "Content for home page");
-            _app.AddRoute("about", "Content for about page");
-            _app.AddRoute("contact", "Content for contact page");
+            _app.AddRoute("home", new HomeView());
+            _app.AddRoute("about", new AboutView());
+            _app.AddRoute("contact", new ContactView());
         }
 
         [Test]
@@ -42,6 +42,30 @@ namespace Tests
         public void Unmatched_path_throws_argument_exception()
         {
             Assert.Throws<ArgumentException>(() => _app.Handle("Unmatched path"));
+        }
+    }
+
+    public class HomeView : IStringView
+    {
+        public string GetContent()
+        {
+            return "Content for home page";
+        }
+    }
+
+    public class AboutView : IStringView
+    {
+        public string GetContent()
+        {
+            return "Content for about page";
+        }
+    }
+
+    public class ContactView : IStringView
+    {
+        public string GetContent()
+        {
+            return "Content for contact page";
         }
     }
 }
