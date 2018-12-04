@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using RoutingForFun;
 
@@ -11,6 +12,13 @@ namespace Tests
             var app = new App();
             var result = app.Handle("home");
             Assert.That(result, Is.EqualTo("Content for home page"));
+        }
+
+        [Test]
+        public void Unmatched_path_throws_argument_exception()
+        {
+            var app = new App();
+            Assert.Throws<ArgumentException>(() => app.Handle("alskdj"));
         }
     }
 }

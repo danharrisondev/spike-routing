@@ -6,7 +6,10 @@ namespace RoutingForFun
     {
         public string Handle(string path)
         {
-            return "Content for home page";
+            if (path == "home")
+                return "Content for home page";
+
+            throw new ArgumentException("path", "No route exists for the given path");
         }
     }
 }
