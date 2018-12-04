@@ -12,6 +12,9 @@ namespace RoutingForFun
             if (path == "about")
                 return "Content for about page";
 
+            if (path == "contact")
+                return "Content for contact page";
+
             throw new ArgumentException("path", "No route exists for the given path");
         }
     }

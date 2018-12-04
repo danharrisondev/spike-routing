@@ -23,6 +23,14 @@ namespace Tests
         }
 
         [Test]
+        public void Contact_returns_contact_page_content()
+        {
+            var app = new App();
+            var result = app.Handle("contact");
+            Assert.That(result, Is.EqualTo("Content for contact page"));
+        }
+
+        [Test]
         public void Unmatched_path_throws_argument_exception()
         {
             var app = new App();
